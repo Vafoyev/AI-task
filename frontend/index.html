@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eye Gem — Ko'z ko'rish o'tkirligini onlayn tekshirish ilovasi">
+    <title>Eye Gem — Ko'z Tekshiruvi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav" class="nav hidden">
+        <div class="nav-inner">
+            <a href="#/" class="nav-logo">
+                <span class="logo-icon">👁️</span>
+                <span class="logo-text">Eye<span class="logo-accent">Gem</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#/dashboard" class="nav-link" data-page="dashboard">
+                    <span class="nav-icon">📊</span> Dashboard
+                </a>
+                <a href="#/eye-test" class="nav-link" data-page="eye-test">
+                    <span class="nav-icon">🔬</span> Ko'z Testi
+                </a>
+                <a href="#/chatbot" class="nav-link" data-page="chatbot">
+                    <span class="nav-icon">🤖</span> AI Maslahat
+                </a>
+                <a href="#/profile" class="nav-link" data-page="profile">
+                    <span class="nav-icon">👤</span> Profil
+                </a>
+            </div>
+            <button id="logout-btn" class="btn btn-ghost">Chiqish</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app-container">
+        <!-- Pages will be rendered here by SPA router -->
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <!-- App Core (must load first) -->
+    <script src="app.js"></script>
+    <!-- Page Scripts -->
+    <script src="pages/auth.js"></script>
+    <script src="pages/dashboard.js"></script>
+    <script src="pages/profile.js"></script>
+    <script src="pages/camera.js"></script>
+    <script src="pages/eye-test.js"></script>
+    <script src="pages/results.js"></script>
+    <script src="pages/chatbot.js"></script>
+</body>
+</html>

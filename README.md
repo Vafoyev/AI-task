@@ -1,4 +1,4 @@
-# 👁️ Eye Gem — Ko'z Tekshiruv Ilovasi
+# Ai task — Ko'z Tekshiruv Ilovasi
 
 Ko'z ko'rish o'tkirligini onlayn tekshirish uchun web ilova.
 

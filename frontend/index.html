@@ -8,38 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Animated Background Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
     <!-- Navigation -->
     <nav id="main-nav" class="nav hidden">
         <div class="nav-inner">
             <a href="#/" class="nav-logo">
-                <span class="logo-icon">👁️</span>
+                <span class="material-icons-round logo-icon">visibility</span>
                 <span class="logo-text">Eye<span class="logo-accent">Gem</span></span>
             </a>
             <div class="nav-links">
                 <a href="#/dashboard" class="nav-link" data-page="dashboard">
-                    <span class="nav-icon">📊</span> Dashboard
+                    <span class="material-icons-round">dashboard</span>
+                    <span>Dashboard</span>
                 </a>
                 <a href="#/eye-test" class="nav-link" data-page="eye-test">
-                    <span class="nav-icon">🔬</span> Ko'z Testi
+                    <span class="material-icons-round">biotech</span>
+                    <span>Ko'z Testi</span>
                 </a>
                 <a href="#/chatbot" class="nav-link" data-page="chatbot">
-                    <span class="nav-icon">🤖</span> AI Maslahat
+                    <span class="material-icons-round">smart_toy</span>
+                    <span>AI Maslahat</span>
                 </a>
                 <a href="#/profile" class="nav-link" data-page="profile">
-                    <span class="nav-icon">👤</span> Profil
+                    <span class="material-icons-round">person</span>
+                    <span>Profil</span>
                 </a>
             </div>
-            <button id="logout-btn" class="btn btn-ghost">Chiqish</button>
+            <button id="logout-btn" class="btn btn-ghost">
+                <span class="material-icons-round">logout</span>
+                Chiqish
+            </button>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main id="app-container">
-        <!-- Pages will be rendered here by SPA router -->
-    </main>
+    <main id="app-container"></main>
 
     <!-- Toast Notifications -->
     <div id="toast-container"></div>

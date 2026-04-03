@@ -19,7 +19,8 @@ def detect_faces(image_bytes: bytes) -> dict:
         return {"face_detected": False, "error": "Tasvir o'qib bo'lmadi"}
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    h, w = gray.shape
+    _shape = gray.shape
+    h, w = int(_shape[0]), int(_shape[1])
 
     faces = face_cascade.detectMultiScale(
         gray,
@@ -32,25 +33,26 @@ def detect_faces(image_bytes: bytes) -> dict:
         return {"face_detected": False, "message": "Yuz topilmadi"}
 
     # Take the largest face
-    x, y, fw, fh = max(faces, key=lambda f: f[2] * f[3])
+    largest_face = max(faces, key=lambda f: f[2] * f[3])
+    x, y, fw, fh = int(largest_face[0]), int(largest_face[1]), int(largest_face[2]), int(largest_face[3])
 
     # Calculate distance based on face width in pixels
     distance_cm = calculate_distance(fw, w)
 
     # Convert to percentage for frontend overlay
     face_box = {
-        "x": round((x / w) * 100, 1),
-        "y": round((y / h) * 100, 1),
-        "w": round((fw / w) * 100, 1),
-        "h": round((fh / h) * 100, 1)
+        "x": float(f"{(x / w) * 100.0:.1f}"),
+        "y": float(f"{(y / h) * 100.0:.1f}"),
+        "w": float(f"{(fw / w) * 100.0:.1f}"),
+        "h": float(f"{(fh / h) * 100.0:.1f}")
     }
 
     return {
         "face_detected": True,
         "face_box": face_box,
-        "face_width_px": int(fw),
-        "image_width_px": int(w),
-        "distance_cm": round(distance_cm, 1)
+        "face_width_px": fw,
+        "image_width_px": w,
+        "distance_cm": float(f"{distance_cm:.1f}")
     }
 
 
